@@ -2,6 +2,8 @@
 library(dplyr)
 library(caret)
 library(randomForest)
+library(class)
+library(e1071)
 
 # Importando os dados -----------------------------------------------------
 
@@ -92,6 +94,28 @@ test_data <- hepa.data[-index, ]
 
 # Criando modelo de classificação
 model <- randomForest(CLASSI_FIN_NOME ~ ., data = train_data)
+
+# Fazendo previsões no conjunto de testes
+predictions <- predict(model, newdata = test_data)
+
+# Avaliando o desempenho do modelo
+confusion_matrix <- table(predictions, test_data$CLASSI_FIN_NOME)
+confusion_matrix
+
+accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
+accuracy
+
+
+# Naïve Bayes -------------------------------------------------------------
+
+# Dividindo o conjunto de dados em treinamento e teste
+set.seed(123)  # Defina uma semente para a reproducibilidade
+index <- createDataPartition(hepa.data$CLASSI_FIN_NOME, p = 0.8, list = FALSE)
+train_data <- hepa.data[index, ]
+test_data <- hepa.data[-index, ]
+
+# Criando modelo de classificação Naïve Bayes
+model <- e1071::naiveBayes(CLASSI_FIN_NOME ~ ., data = train_data)
 
 # Fazendo previsões no conjunto de testes
 predictions <- predict(model, newdata = test_data)
