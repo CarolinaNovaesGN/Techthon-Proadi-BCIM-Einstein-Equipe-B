@@ -105,8 +105,7 @@ confusion_matrix
 accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
 accuracy
 
-
-# Naïve Bayes -------------------------------------------------------------
+# naiveBayes --------------------------------------------------------------
 
 # Dividindo o conjunto de dados em treinamento e teste
 set.seed(123)  # Defina uma semente para a reproducibilidade
