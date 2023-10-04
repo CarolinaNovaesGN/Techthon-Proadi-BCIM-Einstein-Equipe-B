@@ -1,0 +1,49 @@
+.main-header .logo {
+  font-family: "Georgia", Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* logo */
+.skin-blue .main-header .logo {
+  background-color: #189ad3;
+}
+
+/* logo when hovered */
+.skin-blue .main-header .logo:hover {
+  background-color: #189ad3;
+}
+
+/* navbar (rest of the header) */
+.skin-blue .main-header .navbar {
+  background-color: #189ad3;
+}        
+
+/* main sidebar */
+.skin-blue .main-sidebar {
+  background-color: #dbebf8 ;
+}
+
+/* active selected tab in the sidebarmenu */
+.skin-blue .main-sidebar .sidebar .sidebar-menu .active a{
+  background-color: #189ad3;
+  color: white;
+}
+
+/* other links in the sidebarmenu */
+.skin-blue .main-sidebar .sidebar .sidebar-menu a{
+  background-color: #74ccf4;
+  color: black;
+ }
+
+/* other links in the sidebarmenu when hovered */
+.skin-blue .main-sidebar .sidebar .sidebar-menu a:hover{
+  background-color: #243447;
+  color:white;
+}
+                              
+/* toggle button when hovered  */                    
+.skin-blue .main-header .navbar .sidebar-toggle:hover{
+  background-color: #243447;
+  color: white;
+}
