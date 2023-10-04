@@ -4,6 +4,7 @@ library(caret)
 library(randomForest)
 library(class)
 library(e1071)
+library(nnet)
 
 # Importando os dados -----------------------------------------------------
 
@@ -58,10 +59,10 @@ tidy.db <- tidy.db |>
 hepa.data <- tidy.db |> 
   filter(HEPATITE_N == 2,# suspeita inicial de hepatite B/C
          CS_SEXO != "I", # removendo observação quando o SEXO é ignorada
-         HEPATITA == 9, # removendo observação quando o HEPATITA é ignorada
-         HEPATITB == 9, 
-         HIV == 9, 
-         OUTRA_DST == 9) |> 
+         HEPATITA != 9, # removendo observação quando o HEPATITA é ignorada
+         HEPATITB != 9, 
+         HIV != 9, 
+         OUTRA_DST != 9) |> 
   dplyr::select(
     CS_SEXO,
     HEPATITA, HEPATITB, HIV,
@@ -126,3 +127,25 @@ confusion_matrix
 accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
 accuracy
 
+# nnet --------------------------------------------------------------------
+
+# Dividindo o conjunto de dados em treinamento e teste 
+set.seed(123) 
+index <- createDataPartition(hepa.data$CLASSI_FIN_NOME, p = 0.8, list = FALSE)
+train_data <- hepa.data[index, ]
+test_data <- hepa.data[-index, ]
+
+# Criando modelo de rede neural
+model <- nnet(CLASSI_FIN_NOME ~ ., data = train_data, 
+              size = 10,
+              linout = TRUE)
+
+# Fazendo previsões no conjunto de testes
+predictions <- predict(model, newdata = test_data, type = "class")
+
+# Avaliando o desempenho do modelo
+confusion_matrix <- table(predictions, test_data$CLASSI_FIN_NOME)
+confusion_matrix
+
+accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
+accuracy
