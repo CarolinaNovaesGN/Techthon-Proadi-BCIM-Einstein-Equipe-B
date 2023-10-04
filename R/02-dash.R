@@ -15,7 +15,7 @@ dash_sidebar <- dashboardSidebar(
   width = "230px",
   
   sidebarMenu(
-    menuItem("Formulário",
+    menuItem("Dados Clínicos",
              tabName = "form",
              icon = icon("user")
     ),
@@ -35,7 +35,7 @@ dash_body <- dashboardBody(
       tabName = "form",
       fluidRow(
         box(
-          title = "Formulário",
+          title = "",
           selectInput("sexo", "Sexo:", choices = c("1-Masculino", "2-Feminino")),
           selectInput("hepatita", "Vacina para Hepatite A:",
                       choices = c("1-Completa", "2-Incompleta", "3-Não vacinado")),
