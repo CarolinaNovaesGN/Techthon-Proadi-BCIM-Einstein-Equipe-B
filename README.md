@@ -40,4 +40,4 @@ Abra uma solicitação de pull
 
 - [Licença]
 
-Este projeto está licenciado sob a GNU GPL.
+Este projeto está licenciado sob a licença MIT.
