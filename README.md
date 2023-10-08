@@ -1,7 +1,7 @@
 # Techthon-Proadi-BCIM-Einstein
 
 Projeto realizado pela equipe B to Techthon-Proadi-BCIM-Einstein: Ariana Caral, Carolina Novaes, Lays Azevedo, Luana Nunes e Mariana Marques.
-Esse projeto contém modelos de Machine Learning sobre a hepatite e scripts de implementação do modeo no ambiente Sagemaker da Amazon Web Services. Foi utilizada uma imagem docker do framework scikit-learn pre-built disponiilizada pela AWS. Para mais informações, consulte a documentação oficial da AWS.
+Esse projeto contém modelos de Machine Learning sobre a hepatite e scripts de implementação do modelo no ambiente Sagemaker da Amazon Web Services. Foi utilizada uma imagem docker do framework scikit-learn pre-built disponiilizada pela AWS. Para mais informações, consulte a documentação oficial da AWS.
 
 ## Sumário
 
