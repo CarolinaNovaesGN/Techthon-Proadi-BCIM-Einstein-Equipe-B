@@ -11,7 +11,7 @@ A base de dados utilizada para a implementação da solução foi a [**SINAN**](
 
 A base contempla variáveis demográficas (como sexo, raça/cor, idade) e clínicas (como potenciais exposições aos vírus das hepatites, resultados sorológicos/virológicos e classificação diagnóstica) que são importantes para traçar o perfil dos indivíduos infectados e possibilitam a implementação de modelos de classificação diagnóstica, cuja descrição detalhada encontra-se detalhada na [documentação](https://github.com/CarolinaNovaesGN/Techthon-Proadi-BCIM-Einstein/tree/main/dictionary) do SINAN.
 
-Para a modelagem, foi considerado apenas os dados de hepatite B e C, não sendo considerados observações faltantes ou ignoradas durante o preenchimento da notificação.
+Para a modelagem, foi considerado apenas os dados de hepatite B e C, não sendo consideradas observações faltantes ou ignoradas durante o preenchimento da notificação.
 
 - [Recursos]
 
