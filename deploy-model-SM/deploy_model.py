@@ -8,7 +8,7 @@ import subprocess
 #configurando client
 region = boto3.Session().region_name
 
-role = "arn:aws:iam::174315626162:role/service-role/SageMaker-MLOpsEngineer"
+role = "arn:aws:iam::exemplo:role/service-role/SageMaker-MLOpsEngineer"
 
 sm_client = boto3.client('sagemaker', region_name=region)
 runtime = boto3.client(service_name="sagemaker-runtime")
