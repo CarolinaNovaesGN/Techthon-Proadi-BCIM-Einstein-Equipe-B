@@ -5,7 +5,7 @@ Esse projeto contém modelos de Machine Learning sobre a hepatite e scripts de i
 
 ## Sumário
 
-- [Base de dados]
+- # Base de dados
 
 A base de dados utilizada para a implementação da solução foi a [**SINAN**](http://portalsinan.saude.gov.br/o-sinan) (Sistema de Informação de Agravos de Notificação) do DATASUS que apresenta, dentre outros dados epidemiológicos, notificações das hepatites virais B e C.
 
@@ -13,13 +13,13 @@ A base contempla variáveis demográficas (como sexo, raça/cor, idade) e clíni
 
 Para a modelagem, foi considerado apenas os dados de hepatite B e C, não sendo consideradas observações faltantes ou ignoradas durante o preenchimento da notificação.
 
-- [Recursos]
+- # Recursos
 
 Registro do modelo do arquivo train.py no ambiente da AWS para online serving e batch predictions. Após rodar o script deploy_model será criado um artefato do modelo serializado em um bucket do S3, um modelo registrado no sagemaker e um endpoint com o modelo implantado para predições. 
 
 O script inference.py será compactado junto ao modelo serializado. Ele está estruturado de acordo com os requisitos da AWS para realizar a integração de um modelo customizado com um container para previsões. Esse código pode ser customizado desde que mantenha essa estrutura e nomenclatura de funções.
 
-- [Pré-requisitos]
+- # Pré-requisitos
 
 Name: boto3 (python package)
 Version: 1.28.62
@@ -36,7 +36,7 @@ Version: 2.13.25
 Name: Python
 Version: 3.11.
 
-- [Contribuição]
+- # Contribuição
 
 Contribuições são bem-vindas! Para contribuir com Techthon-Proadi-BCIM-Einstein, siga estas etapas:
 
@@ -46,6 +46,6 @@ Faça commit de suas alterações (git commit -am 'Adicionei uma nova funcionali
 Envie suas alterações (git push origin feature/nova-funcionalidade)
 Abra uma solicitação de pull
 
-- [Licença]
+- # Licença
 
 Este projeto está licenciado sob a licença MIT.
