@@ -75,13 +75,13 @@ hepa.data <- tidy.db |>
     CS_SEXO = as.character(CS_SEXO) |> 
       as.factor(),
     CLASSI_FIN = as.character(CLASSI_FIN), 
-                CLASSI_FIN_NOME = dplyr::case_when(
-                  CLASSI_FIN == 1 ~ "confirmacao laboratorial",
-                  CLASSI_FIN == 2 ~ "confirmacao clinico-epidemiologica",
-                  CLASSI_FIN == 3 ~ "descartado", 
-                  CLASSI_FIN == 4 ~ "cicatriz sorologica",
-                  CLASSI_FIN == 8 ~ "inconclusivo"
-                ) |> as.factor()) |> 
+    CLASSI_FIN_NOME = dplyr::case_when(
+      CLASSI_FIN == 1 ~ "confirmacao laboratorial",
+      CLASSI_FIN == 2 ~ "confirmacao clinico-epidemiologica",
+      CLASSI_FIN == 3 ~ "descartado", 
+      CLASSI_FIN == 4 ~ "cicatriz sorologica",
+      CLASSI_FIN == 8 ~ "inconclusivo"
+    ) |> as.factor()) |> 
   dplyr::select(!CLASSI_FIN)
 
 
@@ -105,6 +105,8 @@ confusion_matrix
 
 accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
 accuracy
+
+confusionMatrix(predictions, test_data$CLASSI_FIN_NOME)
 
 # naiveBayes --------------------------------------------------------------
 
