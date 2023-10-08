@@ -5,6 +5,14 @@ Esse projeto contém modelos de Machine Learning sobre a hepatite e scripts de i
 
 ## Sumário
 
+- [Base de dados]
+
+A base de dados utilizada para a implementação da solução foi a [**SINAN**](http://portalsinan.saude.gov.br/o-sinan) (Sistema de Informação de Agravos de Notificação) do DATASUS que apresenta, dentre outros dados epidemiológicos, notificações das hepatites virais B e C.
+
+A base contempla variáveis demográficas (como sexo, raça/cor, idade) e clínicas (como potenciais exposições aos vírus das hepatites, resultados sorológicos/virológicos e classificação diagnóstica) que são importantes para traçar o perfil dos indivíduos infectados e possibilitam a implementação de modelos de classificação diagnóstica, cuja descrição detalhada encontra-se detalhada na [documentação](https://github.com/CarolinaNovaesGN/Techthon-Proadi-BCIM-Einstein/tree/main/dictionary) do SINAN.
+
+Para a modelagem, foi considerado apenas os dados de hepatite B e C, não sendo considerados observações faltantes ou ignoradas durante o preenchimento da notificação.
+
 - [Recursos]
 
 Registro do modelo do arquivo train.py no ambiente da AWS para online serving e batch predictions. Após rodar o script deploy_model será criado um artefato do modelo serializado em um bucket do S3, um modelo registrado no sagemaker e um endpoint com o modelo implantado para predições. 
