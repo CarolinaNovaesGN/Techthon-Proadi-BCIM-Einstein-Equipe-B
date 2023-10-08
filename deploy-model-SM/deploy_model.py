@@ -91,16 +91,5 @@ while describe_endpoint_response["EndpointStatus"] == "Creating":
     print(describe_endpoint_response["EndpointStatus"])
     time.sleep(15)
 print(describe_endpoint_response)
-#------------------------------------------------------------------------------------------------------------------
-#Criando um model group no sagemaker
-#import time
-#model_package_group_name = "scikit-hepatite-" + str(round(time.time()))
-#model_package_group_input_dict = {
-# "ModelPackageGroupName" : model_package_group_name,
-# "ModelPackageGroupDescription" : "Hepatite model package group."
-#}
-#
-#create_model_package_group_response = sm_client.create_model_package_group(**model_package_group_input_dict)
-#print('ModelPackageGroup Arn : {}'.format(create_model_package_group_response['ModelPackageGroupArn']))
-#------------------------------------------------------------------------------------------------------------------
+
 
